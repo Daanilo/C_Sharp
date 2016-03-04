@@ -61,9 +61,14 @@
             this.corDeFundoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ajudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblCaps = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblNum = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblIns = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -75,11 +80,11 @@
             // 
             this.toolStripContainer1.ContentPanel.Controls.Add(this.tbxEditor);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.statusStrip1);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(622, 267);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(535, 267);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
             this.toolStripContainer1.Name = "toolStripContainer1";
-            this.toolStripContainer1.Size = new System.Drawing.Size(622, 316);
+            this.toolStripContainer1.Size = new System.Drawing.Size(535, 316);
             this.toolStripContainer1.TabIndex = 0;
             this.toolStripContainer1.Text = "toolStripContainer1";
             // 
@@ -95,16 +100,22 @@
             this.tbxEditor.Multiline = true;
             this.tbxEditor.Name = "tbxEditor";
             this.tbxEditor.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbxEditor.Size = new System.Drawing.Size(622, 245);
+            this.tbxEditor.Size = new System.Drawing.Size(535, 245);
             this.tbxEditor.TabIndex = 3;
             this.tbxEditor.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.tbxEditor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxEditor_KeyPress);
             // 
             // statusStrip1
             // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lblStatus,
+            this.lblCaps,
+            this.lblNum,
+            this.lblIns});
             this.statusStrip1.Location = new System.Drawing.Point(0, 245);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.statusStrip1.Size = new System.Drawing.Size(622, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(535, 22);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -246,7 +257,7 @@
             this.ajudaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(622, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(535, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -269,52 +280,52 @@
             // 
             this.novoToolStripMenuItem.Image = global::Danilo.editorDeTexto.UI.Desktop.Properties.Resources.glyphicons_036_file;
             this.novoToolStripMenuItem.Name = "novoToolStripMenuItem";
-            this.novoToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.novoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.novoToolStripMenuItem.Text = "Novo";
             // 
             // abrirToolStripMenuItem
             // 
             this.abrirToolStripMenuItem.Image = global::Danilo.editorDeTexto.UI.Desktop.Properties.Resources.glyphicons_144_folder_open;
             this.abrirToolStripMenuItem.Name = "abrirToolStripMenuItem";
-            this.abrirToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.abrirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.abrirToolStripMenuItem.Text = "Abrir";
             // 
             // salvarToolStripMenuItem
             // 
             this.salvarToolStripMenuItem.Image = global::Danilo.editorDeTexto.UI.Desktop.Properties.Resources.glyphicons_443_floppy_disk;
             this.salvarToolStripMenuItem.Name = "salvarToolStripMenuItem";
-            this.salvarToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.salvarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.salvarToolStripMenuItem.Text = "Salvar";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(120, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
             // 
             // vizualizarToolStripMenuItem
             // 
             this.vizualizarToolStripMenuItem.Image = global::Danilo.editorDeTexto.UI.Desktop.Properties.Resources.glyphicons_027_search;
             this.vizualizarToolStripMenuItem.Name = "vizualizarToolStripMenuItem";
-            this.vizualizarToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.vizualizarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.vizualizarToolStripMenuItem.Text = "Vizualizar";
             // 
             // imprimirToolStripMenuItem
             // 
             this.imprimirToolStripMenuItem.Image = global::Danilo.editorDeTexto.UI.Desktop.Properties.Resources.glyphicons_449_fax;
             this.imprimirToolStripMenuItem.Name = "imprimirToolStripMenuItem";
-            this.imprimirToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.imprimirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.imprimirToolStripMenuItem.Text = "Imprimir";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(120, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
             // 
             // sairToolStripMenuItem
             // 
             this.sairToolStripMenuItem.Image = global::Danilo.editorDeTexto.UI.Desktop.Properties.Resources.glyphicons_388_exit;
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
@@ -361,24 +372,54 @@
             // 
             this.sobreToolStripMenuItem.Image = global::Danilo.editorDeTexto.UI.Desktop.Properties.Resources.glyphicons_195_circle_info;
             this.sobreToolStripMenuItem.Name = "sobreToolStripMenuItem";
-            this.sobreToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
+            this.sobreToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.sobreToolStripMenuItem.Text = "Sobre";
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(38, 17);
+            this.lblStatus.Text = "status";
+            // 
+            // lblCaps
+            // 
+            this.lblCaps.Name = "lblCaps";
+            this.lblCaps.Size = new System.Drawing.Size(33, 17);
+            this.lblCaps.Text = "Caps";
+            // 
+            // lblNum
+            // 
+            this.lblNum.Name = "lblNum";
+            this.lblNum.Size = new System.Drawing.Size(32, 17);
+            this.lblNum.Text = "num";
+            // 
+            // lblIns
+            // 
+            this.lblIns.Name = "lblIns";
+            this.lblIns.Size = new System.Drawing.Size(22, 17);
+            this.lblIns.Text = "ins";
             // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(622, 316);
+            this.ClientSize = new System.Drawing.Size(535, 316);
             this.Controls.Add(this.toolStripContainer1);
+            this.HelpButton = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Danilo - Editor de Texto";
+            this.Load += new System.EventHandler(this.FormPrincipal_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormPrincipal_KeyDown);
             this.toolStripContainer1.ContentPanel.ResumeLayout(false);
             this.toolStripContainer1.ContentPanel.PerformLayout();
             this.toolStripContainer1.TopToolStripPanel.ResumeLayout(false);
             this.toolStripContainer1.TopToolStripPanel.PerformLayout();
             this.toolStripContainer1.ResumeLayout(false);
             this.toolStripContainer1.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
@@ -422,6 +463,10 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripStatusLabel lblStatus;
+        private System.Windows.Forms.ToolStripStatusLabel lblCaps;
+        private System.Windows.Forms.ToolStripStatusLabel lblNum;
+        private System.Windows.Forms.ToolStripStatusLabel lblIns;
     }
 }
 
