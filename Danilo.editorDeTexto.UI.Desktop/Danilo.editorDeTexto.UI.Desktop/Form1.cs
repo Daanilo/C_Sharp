@@ -22,10 +22,6 @@ namespace Danilo.editorDeTexto.UI.Desktop
             
         }
 
-        private void toolStripButton9_Click(object sender, EventArgs e)
-        {
-            close();
-        }
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
         {
