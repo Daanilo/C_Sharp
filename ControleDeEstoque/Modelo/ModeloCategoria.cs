@@ -15,7 +15,7 @@ namespace Modelo
             set { this.cat_cod = value; }
         }
         private string cat_nome;
-        public int CatNome
+        public string CatNome
         {
             get { return this.cat_nome; }
             set { this.cat_nome = value; }
